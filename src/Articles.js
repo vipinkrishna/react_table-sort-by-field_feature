@@ -8,18 +8,20 @@ export default function Articles({ data }) {
 
   return (
     <div>
-      <table>
+      <table id="articles">
         <thead>
           <tr>
-            <th>COLOR</th>
-            <th}>VALUE</th>
+            <th onClick={() => sortby('color')}>COLOR</th>
+            <th onClick={() => sortby('value')}>VALUE</th>
           </tr>
         </thead>
         <tbody>
-            <tr>
-              <td>color</td>
-              <td>value</td>
+          {data.map((item, index) => (
+            <tr key={index}>
+              <td>{item.color}</td>
+              <td>{item.value}</td>
             </tr>
+          ))}
         </tbody>
       </table>
     </div>
